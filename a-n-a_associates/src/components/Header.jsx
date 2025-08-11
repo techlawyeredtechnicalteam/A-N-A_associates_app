@@ -80,7 +80,7 @@ const Header = () => {
               >
                 {/* Logo Image with enhanced styling and SEO */}
                 <div className="flex-shrink-0 relative">
-                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 p-1.5 sm:p-2 border border-white/20 shadow-2xl">
+                  <div className="relative p-1.5 sm:p-2">
                     <Image
                       src="/logo-crop.jpg"
                       alt="A.N.A & Associates Logo - Lady Justice representing legal excellence and integrity"
@@ -148,8 +148,8 @@ const Header = () => {
                     href={navItem.href}
                     className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
                       isActiveLink(navItem.href)
-                        ? "text-[#b98e44] bg-white/10 rounded-lg"
-                        : "text-white/90 hover:text-[#b98e44]"
+                        ? "text-blue-400 bg-white/10 rounded-lg"
+                        : "text-white/90 hover:text-blue-400"
                     }`}
                     aria-current={
                       isActiveLink(navItem.href) ? "page" : undefined

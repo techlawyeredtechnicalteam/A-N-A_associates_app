@@ -62,7 +62,7 @@ const About = () => {
     founder: {
       "@type": "Person",
       name: "Adekunle Aribisala",
-      jobTitle: "Principal Partner",
+      jobTitle: "Managing Partner",
       description:
         "Seasoned legal practitioner with over a decade of experience in diverse areas of law",
       alumniOf: [
@@ -201,7 +201,7 @@ const About = () => {
         />
         <meta
           name="description"
-          content="Learn about A.N.A & Associates, a full-service law firm in Lagos, Nigeria. Led by Principal Partner Adekunle Aribisala with over a decade of legal expertise in corporate law, civil litigation, property law, and insolvency."
+          content="Learn about A.N.A & Associates, a full-service law firm in Lagos, Nigeria. Led by Managing Partner Adekunle Aribisala with over a decade of legal expertise in corporate law, civil litigation, property law, and insolvency."
         />
         <meta
           name="keywords"
@@ -269,15 +269,15 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
-                Meet our Principal Partner
+                Meet our Managing Partner
               </motion.p>
             </motion.h1>
           </motion.header>
 
-          {/* Principal Partner Profile */}
+          {/* Managing Partner Profile */}
           <motion.section
             className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12 sm:mb-16"
-            aria-labelledby="principal-partner"
+            aria-labelledby="Managing-partner"
             variants={itemVariants}
             transition={{ duration: 0.2 }}
           >
@@ -286,30 +286,30 @@ const About = () => {
               <div className="lg:w-1/3 bg-[#b98e44] p-6 sm:p-8 lg:p-12 flex items-center justify-center">
                 <div className="text-center">
                   <motion.div
-                    className="w-48 h-48 sm:w-32 sm:h-32 bg-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg"
+                    className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg"
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="w-16 h-16 sm:w-24 sm:h-24 bg-gray-200 rounded-full flex items-center justify-center">
-                      {/* Profile Image */}
-                      <Image
-                        src="/profile.jpg"
-                        alt="A.N.A & Associates Principal Partner - Adekunle Aribisala"
-                        className="h-48 w-48 sm:h-24 sm:w-24 rounded-full object-cover"
-                        width="96"
-                        height="96"
-                        loading="eager"
-                        decoding="async"
-                      />
-                    </div>
+                    {/* White background matches image size */}
+                    <div className="absolute inset-0 bg-white rounded-full" />
+                    <Image
+                      src="/profile.png"
+                      alt="A.N.A & Associates Managing Partner - Adekunle Aribisala"
+                      className="rounded-full object-contain w-full h-full relative"
+                      width={192}
+                      height={192}
+                      loading="eager"
+                      decoding="async"
+                      priority
+                    />
                   </motion.div>
                   <h2
-                    id="principal-partner"
+                    id="Managing-partner"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-1 sm:mb-2"
                   >
                     ADEKUNLE ARIBISALA
                   </h2>
                   <p className="text-sm sm:text-base text-gray-800 font-medium">
-                    Principal Partner
+                    Managing Partner
                   </p>
                 </div>
               </div>
@@ -318,7 +318,7 @@ const About = () => {
               <div className="lg:w-2/3 p-6 sm:p-8 lg:p-12">
                 <div className="mb-6">
                   <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-[#b98e44] mb-2">
-                    Principal Partner | Legal Practitioner | Notary Public
+                    Managing Partner | Legal Practitioner | Notary Public
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-3 sm:mb-4">
                     Adekunle Aribisala is a seasoned legal practitioner with

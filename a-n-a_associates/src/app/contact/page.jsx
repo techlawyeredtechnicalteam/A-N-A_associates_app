@@ -78,7 +78,7 @@ const ContactPage = () => {
           >
             <div className="flex flex-col items-center text-center">
               <motion.div
-                className="bg-[#b98e44] p-4 rounded-2xl mb-6 group-hover:bg-[#a17a3a] transition-colors duration-300"
+                className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
                 variants={iconVariants}
               >
                 <FaMapPin className="w-8 h-8 text-white" />
@@ -104,7 +104,7 @@ const ContactPage = () => {
           >
             <div className="flex flex-col items-center text-center">
               <motion.div
-                className="bg-[#b98e44] p-4 rounded-2xl mb-6 group-hover:bg-[#a17a3a] transition-colors duration-300"
+                className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
                 variants={iconVariants}
               >
                 <MdLocalPhone className="w-8 h-8 text-white" />
@@ -140,7 +140,7 @@ const ContactPage = () => {
           >
             <div className="flex flex-col items-center text-center">
               <motion.div
-                className="bg-[#b98e44] p-4 rounded-2xl mb-6 group-hover:bg-[#a17a3a] transition-colors duration-300"
+                className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
                 variants={iconVariants}
               >
                 <CiClock2 className="w-8 h-8 text-white" />
@@ -206,7 +206,7 @@ const ContactPage = () => {
                 transition={{ delay: 0.2, duration: 0.4 }}
               >
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-[#b98e44] rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center">
                     <FaMapPin className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -232,7 +232,7 @@ const ContactPage = () => {
                   </p>
                 </div>
               </motion.div>
-
+          
               {/* Street Grid Pattern */}
               <div className="absolute inset-0 opacity-20">
                 <div
@@ -265,7 +265,7 @@ const ContactPage = () => {
               href="https://maps.google.com/?q=1st+Floor+Scapular+Plaza+Igbo+Efon+Bus-stop+Lekki+Epe+Expressway+Lekki+Lagos"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-[#b98e44] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#a17a3a] transition-colors duration-300"
+              className="inline-flex items-center space-x-2 bg-blue-300 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-200 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

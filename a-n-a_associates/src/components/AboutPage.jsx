@@ -23,27 +23,7 @@ const AboutPage = () => {
         <motion.div
           className="text-center mb-12 sm:mb-16"
           variants={fadeInUpVariants}
-        >
-          {/* Logo */}
-          {/* <motion.div
-            className="flex justify-center mb-6 sm:mb-8"
-            variants={logoVariants}
-          >
-            <motion.div
-              transition={{ duration: 0.3 }}
-              className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b98e44] rounded-full flex items-center justify-center shadow-lg"
-            >
-              <img
-                src="/logo-crop.jpg"
-                alt="A.N.A & Associates Logo - Lady Justice representing legal excellence and integrity"
-                className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
-                width="48"
-                height="48"
-                loading="eager"
-                decoding="async"
-              />
-            </motion.div>
-          </motion.div> */}
+        >          
 
           {/* Main Description */}
           <motion.p

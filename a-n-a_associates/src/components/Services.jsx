@@ -192,7 +192,7 @@ const Services = () => {
               whileTap={{ scale: 0.98 }}
             >
               <motion.div
-                className="w-16 h-16 bg-[#b98e44]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#b98e44]/20 transition-colors duration-300"
+                className="w-16 h-16 bg-blue-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-300/20 transition-colors duration-300"
                 whileHover={{
                   rotate: [0, -10, 10, -10, 0],
                   transition: { duration: 0.5 }

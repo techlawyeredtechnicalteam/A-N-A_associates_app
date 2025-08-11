@@ -21,7 +21,7 @@ const Footer = () => {
               <Link href="/" className="flex items-center space-x-4 group">
                 {/* Logo Image with enhanced styling */}
                 <div className="flex-shrink-0 relative">
-                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 p-1.5 sm:p-2 border border-white/20 shadow-2xl">
+                  <div className="relative p-1.5 sm:p-2">
                     <Image
                       src="/logo-crop.jpg"
                       alt="A.N.A & Associates Logo - Lady Justice representing legal excellence and integrity"
@@ -35,7 +35,7 @@ const Footer = () => {
                 </div>
 
                 {/* Company Name and Details with enhanced typography */}
-                <div className="flex flex-col">
+                <div className="flex flex-col hidden lg:flex">
                   <span className="text-xl font-bold text-white leading-tight tracking-wide drop-shadow-lg">
                     A.N.A & ASSOCIATES
                   </span>

@@ -21,7 +21,7 @@ const ValueCard = ({ title, description, index }) => (
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.3 }}
-    className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white/10 hover:border-[#b98e44]/30 transition-colors duration-300"
+    className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white/10 hover:border-blue-400/30 transition-colors duration-300"
   >
     <motion.h2
       initial={{ opacity: 0, x: -20 }}
