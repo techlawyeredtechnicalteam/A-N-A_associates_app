@@ -292,9 +292,10 @@ const About = () => {
                     {/* White background matches image size */}
                     <div className="absolute inset-0 bg-white rounded-full" />
                     <Image
-                      src="/profile.png"
+                      src="/profile.jpg"
                       alt="A.N.A & Associates Managing Partner - Adekunle Aribisala"
-                      className="rounded-full object-contain w-full h-full relative"
+                      className="rounded-full object-covery
+                       w-full h-full relative"
                       width={192}
                       height={192}
                       loading="eager"
