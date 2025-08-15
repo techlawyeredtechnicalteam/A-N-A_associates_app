@@ -6,7 +6,7 @@ export const legalServiceSchema = {
   alternateName: "ANA Associates",
   description:
     "A modern and full-service law firm based in Lagos, Nigeria, committed to providing exceptional legal solutions with integrity and excellence.",
-  url: "https://anaassociates.vercel.app/about",
+  url: "http://anaandassociates.com/about",
   address: {
     "@type": "PostalAddress",
     streetAddress:
@@ -110,6 +110,11 @@ export const legalServiceSchema = {
       }
     ]
   },
+  sameAs: [
+    // Add your social media links here when you have them
+    "https://www.instagram.com/anaandassociates?igsh=MWluM3o0d2h4ZzMyag",
+    "https://x.com/ana_associates?t=STjJ1xo29bkhok3agnu07A&s=09"
+  ],
   serviceArea: {
     "@type": "Country",
     name: "Nigeria"
@@ -125,20 +130,20 @@ export const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://ana-associates.com"
+      item: "http://anaandassociates.com/"
     },
     {
-      "@type": "ListItem", 
+      "@type": "ListItem",
       position: 2,
       name: "About",
-      item: "https://ana-associates.com/about"
+      item: "http://anaandassociates.com/about"
     }
   ]
-}
+};
 
 export const generateSchemaScript = (schema) => ({
   _html: JSON.stringify(schema)
-})
+});
 
 // for homepage
 export const homepageSchema = {
@@ -146,8 +151,8 @@ export const homepageSchema = {
   "@type": "Organization",
   name: "A.N.A & Associates",
   alternateName: "ANA Associates",
-  url: "https://ana-associates.com",
-  logo: "https://ana-associates.com/logo.png",
+  url: "http://anaandassociates.com/",
+  logo: "http://anaandassociates.com/logo.png",
   description:
     "Leading law firm in Lagos, Nigeria providing comprehensive legal services",
   address: {
@@ -168,6 +173,6 @@ export const homepageSchema = {
   sameAs: [
     // Add your social media links here when you have them
     "https://www.instagram.com/anaandassociates?igsh=MWluM3o0d2h4ZzMyag",
-    ""
+    "https://x.com/ana_associates?t=STjJ1xo29bkhok3agnu07A&s=09"
   ]
 };

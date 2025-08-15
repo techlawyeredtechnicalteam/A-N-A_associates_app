@@ -52,7 +52,7 @@ const Header = () => {
                 <div className="flex-shrink-0 relative">
                   <div className="relative p-1.5 sm:p-2">
                     <Image
-                      src="/logo-crop.jpg"
+                      src="/logo.jpg"
                       alt="A.N.A & Associates Logo - Lady Justice representing legal excellence and integrity"
                       className="w-auto object-cover mx-auto"
                       width={120}

@@ -10,14 +10,6 @@ import AboutPage from "@/components/AboutPage";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>A.N.A & Associates - Leading Law Firm in Lagos, Nigeria</title>
-        <meta
-          name="description"
-          content="A.N.A & Associates - Full-service law firm in Lagos, Nigeria. Expert legal services in corporate law, civil litigation, property law, and insolvency matters."
-        />
-      </Head>
-
       <div>
         <Header />
         <main>

@@ -21,7 +21,7 @@ export const PageHead = () => (
     />
     <meta name="author" content="A.N.A & Associates" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://anaassociates.vercel.app/about" />
+    <link rel="canonical" href="http://anaandassociates.com/about" />
 
     {/* Structured Data */}
     <script
