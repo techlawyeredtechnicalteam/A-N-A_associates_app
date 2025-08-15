@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { BsArrowUp } from "react-icons/bs";
+import { BsArrowUp, BsInstagram } from "react-icons/bs";
+import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
 const Footer = () => {
@@ -35,7 +36,7 @@ const Footer = () => {
                 </div>
 
                 {/* Company Name and Details with enhanced typography */}
-                <div className="flex flex-col hidden lg:flex">
+                <div className="flex-col hidden lg:flex">
                   <span className="text-xl font-bold text-white leading-tight tracking-wide drop-shadow-lg">
                     A.N.A & ASSOCIATES
                   </span>
@@ -47,6 +48,31 @@ const Footer = () => {
                   </span>
                 </div>
               </Link>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="mt-8">
+              <h4 className="text-[#b98e44] font-medium mb-3">Follow Us</h4>
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.instagram.com/anaandassociates?igsh=MWluM3o0d2h4ZzMyag"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-700 hover:bg-[#b98e44] rounded-lg flex items-center justify-center transition-colors group"
+                  aria-label="Follow us on Instagram"
+                >
+                  <BsInstagram className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                </a>
+                <a
+                  href="https://x.com/ana_associates?t=STjJ1xo29bkhok3agnu07A&s=09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-700 hover:bg-[#b98e44] rounded-lg flex items-center justify-center transition-colors group"
+                  aria-label="Follow us on X (Twitter)"
+                >
+                  <FaXTwitter className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                </a>
+              </div>
             </div>
           </div>
 
