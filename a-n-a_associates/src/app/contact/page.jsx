@@ -2,46 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaMapPin } from "react-icons/fa";
-import { MdLocalPhone, MdEmail } from "react-icons/md";
-import { CiClock2 } from "react-icons/ci";
 import Header from "@/components/Header";
+import { FaMapPin } from "react-icons/fa";
+import { CiClock2 } from "react-icons/ci";
+import { MdLocalPhone, MdEmail } from "react-icons/md";
+import { CONTACT_ANIMATION_VARIANTS } from "@/components/Animation/ContactAnimation";
 
 const ContactPage = () => {
-  // Animation Varianta
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const iconVariants = {
-    hidden: { scale: 0.8 },
-    visible: {
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -51,10 +18,13 @@ const ContactPage = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
         initial="hidden"
         animate="visible"
-        variants={containerVariants}
+        variants={CONTACT_ANIMATION_VARIANTS.container}
       >
         {/* Page Header */}
-        <motion.div className="text-center mb-16" variants={cardVariants}>
+        <motion.div
+          className="text-center mb-16"
+          variants={CONTACT_ANIMATION_VARIANTS.card}
+        >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#152833]">
             Get In Touch
           </h1>
@@ -67,19 +37,19 @@ const ContactPage = () => {
         {/* Contact Information Grid - 4 Columns */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-          variants={containerVariants}
+          variants={CONTACT_ANIMATION_VARIANTS.container}
         >
           {/* Office Address */}
           <motion.div
             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-xl transition-shadow duration-300"
-            variants={cardVariants}
+            variants={CONTACT_ANIMATION_VARIANTS.card}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2 }}
           >
             <div className="flex flex-col items-center text-center">
               <motion.div
                 className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
-                variants={iconVariants}
+                variants={CONTACT_ANIMATION_VARIANTS.icon}
               >
                 <FaMapPin className="w-8 h-8 text-white" />
               </motion.div>
@@ -98,14 +68,14 @@ const ContactPage = () => {
           {/* Phone Numbers */}
           <motion.div
             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-xl transition-shadow duration-300"
-            variants={cardVariants}
+            variants={CONTACT_ANIMATION_VARIANTS.card}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2 }}
           >
             <div className="flex flex-col items-center text-center">
               <motion.div
                 className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
-                variants={iconVariants}
+                variants={CONTACT_ANIMATION_VARIANTS.icon}
               >
                 <MdLocalPhone className="w-8 h-8 text-white" />
               </motion.div>
@@ -134,14 +104,14 @@ const ContactPage = () => {
           {/* Email */}
           <motion.div
             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-xl transition-shadow duration-300"
-            variants={cardVariants}
+            variants={CONTACT_ANIMATION_VARIANTS.card}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2 }}
           >
             <div className="flex flex-col items-center text-center">
               <motion.div
                 className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
-                variants={iconVariants}
+                variants={CONTACT_ANIMATION_VARIANTS.icon}
               >
                 <MdEmail className="w-8 h-8 text-white" />
               </motion.div>
@@ -162,14 +132,14 @@ const ContactPage = () => {
           {/* Office Hours */}
           <motion.div
             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-xl transition-shadow duration-300"
-            variants={cardVariants}
+            variants={CONTACT_ANIMATION_VARIANTS.card}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2 }}
           >
             <div className="flex flex-col items-center text-center">
               <motion.div
                 className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
-                variants={iconVariants}
+                variants={CONTACT_ANIMATION_VARIANTS.icon}
               >
                 <CiClock2 className="w-8 h-8 text-white" />
               </motion.div>
