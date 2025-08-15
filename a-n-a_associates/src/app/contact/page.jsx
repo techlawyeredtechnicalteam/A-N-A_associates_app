@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaMapPin } from "react-icons/fa";
-import { MdLocalPhone } from "react-icons/md";
+import { MdLocalPhone, MdEmail } from "react-icons/md";
 import { CiClock2 } from "react-icons/ci";
 import Header from "@/components/Header";
 
@@ -64,9 +64,9 @@ const ContactPage = () => {
           </p>
         </motion.div>
 
-        {/* Contact Information Grid - 3 Columns */}
+        {/* Contact Information Grid - 4 Columns */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
           variants={containerVariants}
         >
           {/* Office Address */}
@@ -125,6 +125,34 @@ const ContactPage = () => {
                     className="hover:text-[#b98e44] transition-colors duration-300 font-medium"
                   >
                     +234 805 059 0365
+                  </a>
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Email */}
+          <motion.div
+            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-xl transition-shadow duration-300"
+            variants={cardVariants}
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="flex flex-col items-center text-center">
+              <motion.div
+                className="bg-blue-300 p-4 rounded-2xl mb-6 group-hover:bg-blue-200 transition-colors duration-300"
+                variants={iconVariants}
+              >
+                <MdEmail className="w-8 h-8 text-white" />
+              </motion.div>
+              <h3 className="text-2xl font-bold text-[#152833] mb-4">Email</h3>
+              <div className="space-y-3">
+                <p className="text-gray-600">
+                  <a
+                    href="mailto:info@anaandassociates.com"
+                    className="hover:text-[#b98e44] transition-colors duration-300 font-medium"
+                  >
+                    info@anaandassociates.com
                   </a>
                 </p>
               </div>
@@ -232,7 +260,7 @@ const ContactPage = () => {
                   </p>
                 </div>
               </motion.div>
-          
+
               {/* Street Grid Pattern */}
               <div className="absolute inset-0 opacity-20">
                 <div

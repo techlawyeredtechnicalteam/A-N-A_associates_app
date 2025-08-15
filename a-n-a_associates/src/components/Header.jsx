@@ -2,16 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
+import { usePathname } from "next/navigation";
 import { MdOutlineClose } from "react-icons/md";
 import React, { useState, useEffect } from "react";
-import {
-  headerVariants,
-  textVariants,
-  navItemVariants,
-  navVariants
-} from "./AnimationVariants";
+import { navItems } from "@/constants/HeaderNavItem";
+import { HEADER_ANIMATION_VARIANTS } from "./Animation/HeaderAnimation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,32 +22,6 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Enhanced navigation with SEO-friendly structure
-  const navItems = [
-    {
-      name: "Home",
-      href: "/",
-      description:
-        "A.N.A & Associates homepage - Leading law firm in Lagos, Nigeria"
-    },
-    {
-      name: "About",
-      href: "/about",
-      description: "Learn about our legal team and expertise"
-    },
-    {
-      name: "Legal Services",
-      href: "/services",
-      description:
-        "Comprehensive legal services - Corporate law, Civil litigation, Property law"
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-      description: "Get in touch with our legal experts"
-    }
-  ];
-
   // Check if current page is active
   const isActiveLink = (href) => {
     if (href === "/") {
@@ -61,9 +31,9 @@ const Header = () => {
   };
 
   return (
-    <>
+    <div>
       <motion.header
-        variants={headerVariants}
+        variants={HEADER_ANIMATION_VARIANTS.header}
         initial="initials"
         animate="animate"
         className="bg-[#152833] shadow-xl sticky top-0 z-50 overflow-hidden"
@@ -71,14 +41,14 @@ const Header = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center h-16 sm:h-20 lg:h-24">
-            {/* Logo Section with enhanced SEO */}
+            {/* Logo Section */}
             <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4 relative z-10">
               <Link
                 href="/"
                 className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4 group"
                 aria-label="A.N.A & Associates - Home"
               >
-                {/* Logo Image with enhanced styling and SEO */}
+                {/* Logo Image */}
                 <div className="flex-shrink-0 relative">
                   <div className="relative p-1.5 sm:p-2">
                     <Image
@@ -93,9 +63,9 @@ const Header = () => {
                   </div>
                 </div>
 
-                {/* Company Name and Details with enhanced typography and SEO */}
+                {/* Company Name and Details */}
                 <motion.div
-                  variants={textVariants}
+                  variants={HEADER_ANIMATION_VARIANTS.text}
                   initial="initial"
                   animate="animate"
                   className="flex-col hidden lg:flex"
@@ -129,9 +99,9 @@ const Header = () => {
               </Link>
             </div>
 
-            {/* Desktop Navigation with enhanced SEO */}
+            {/* Desktop Navigation  */}
             <motion.nav
-              variants={navVariants}
+              variants={HEADER_ANIMATION_VARIANTS.nav}
               initial="initial"
               animate="animate"
               className="hidden md:flex space-x-8 relative z-10"
@@ -141,7 +111,7 @@ const Header = () => {
               {navItems.map((navItem) => (
                 <motion.div
                   key={navItem.name}
-                  variants={navItemVariants}
+                  variants={HEADER_ANIMATION_VARIANTS.navItem}
                   whileHover="hover"
                 >
                   <Link
@@ -167,9 +137,9 @@ const Header = () => {
               ))}
             </motion.nav>
 
-            {/* Mobile Menu Button with enhanced accessibility */}
+            {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-white/90 hover:text-[#b98e44] relative z-10 rounded-lg hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-[#152833]"
+              className="md:hidden p-2 text-white/90 hover:text-blue-400 relative z-10 rounded-lg hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#152833]"
               onClick={handleMenuToggle}
               aria-label={
                 isMenuOpen ? "Close navigation menu" : "Open navigation menu"
@@ -185,15 +155,15 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation with enhanced SEO and accessibility */}
+          {/* Mobile Navigation */}
           <motion.nav
-            variants={navVariants}
+            variants={HEADER_ANIMATION_VARIANTS.nav}
             initial="initial"
             animate="animate"
           >
             {isMenuOpen && (
               <motion.div
-                variants={navItemVariants}
+                variants={HEADER_ANIMATION_VARIANTS.mobileNavItem}
                 initial="initial"
                 animate="animate"
                 className="md:hidden relative z-10"
@@ -208,8 +178,8 @@ const Header = () => {
                       href={navItem.href}
                       className={`block px-3 py-2 text-base font-medium rounded-md transition-all duration-300 ${
                         isActiveLink(navItem.href)
-                          ? "text-[#b98e44] bg-white/10"
-                          : "text-white/90 hover:text-[#b98e44] hover:bg-white/5"
+                          ? "text-blue-400 bg-white/10 rounded-lg"
+                          : "text-white/90 hover:text-blue-400 hover:bg-white/5"
                       }`}
                       aria-current={
                         isActiveLink(navItem.href) ? "page" : undefined
@@ -225,7 +195,7 @@ const Header = () => {
           </motion.nav>
         </div>
       </motion.header>
-    </>
+    </div>
   );
 };
 

@@ -1,115 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  cardVariants,
-  containerVariants,
-  headingVariants,
-  subheadingVariants,
-  missionVariants,
-  cardsContainerVariants
-} from "./AnimationVariants";
+import React, { useState, useEffect } from "react";
+import { ValueCard } from "./Reuseables/ValueCard";
+import { valueCards } from "@/constants/HeroValueCards";
+import { CTAButton } from "./Reuseables/CTAButton/CTAButton";
+import { HERO_ANIMATION_VARIANTS } from "./Animation/HeroAnimation";
+import { BackgroundAnimation } from "./Animation/BackgroundAnimation";
 
-const COMPANY_NAME = "A.N.A & Associates";
-
-// Components
-const ValueCard = ({ title, description, index }) => (
-  <motion.article
-    variants={cardVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
-    className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white/10 hover:border-blue-400/30 transition-colors duration-300"
-  >
-    <motion.h2
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.1 + 0.2, duration: 0.4 }}
-      viewport={{ once: true }}
-      className="text-[#b98e44] font-semibold text-base sm:text-lg mb-2"
-    >
-      {title}
-    </motion.h2>
-    <motion.p
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
-      viewport={{ once: true }}
-      className="text-gray-300 text-sm leading-relaxed"
-    >
-      {description}
-    </motion.p>
-  </motion.article>
-);
-
-const CTAButton = ({ href, variant, ariaLabel, children }) => {
-  const baseClasses =
-    "px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105";
-  const variantClasses = {
-    primary: "bg-[#b98e44] text-black hover:bg-yellow-500 shadow-lg",
-    secondary:
-      "bg-transparent border-2 border-[#b98e44] text-[#b98e44] hover:bg-[#b98e44] hover:text-black"
-  };
-
-  return (
-    <Link href={href} aria-label={ariaLabel}>
-      <button className={`${baseClasses} ${variantClasses[variant]}`}>
-        {children}
-      </button>
-    </Link>
-  );
-};
-
-const BackgroundAnimation = () => {
-  return (
-    <div
-      className="fixed inset-0 pointer-events-none overflow-hidden"
-      aria-hidden="true"
-    >
-      <div className="absolute inset-0 opacity-3 sm:opacity-5">
-        <motion.div
-          className="text-[8rem] sm:text-[12rem] md:text-[16rem] lg:text-[20rem] font-bold whitespace-nowrap flex items-center h-full"
-          animate={{
-            x: [0, -2000]
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <span className="inline-block text-[#b98e44] pr-8">
-            {Array(10).fill(`${COMPANY_NAME} • `).join("")}
-          </span>
-        </motion.div>
-      </div>
-
-      {/* Second layer for continuous effect */}
-      <div className="absolute inset-0 opacity-2 sm:opacity-3">
-        <motion.div
-          className="text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold whitespace-nowrap flex items-center h-full"
-          animate={{
-            x: [-2000, 0]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          style={{ marginTop: "10%" }}
-        >
-          <span className="inline-block text-white/10 pr-8">
-            {Array(10).fill(`LEGAL EXCELLENCE • `).join("")}
-          </span>
-        </motion.div>
-      </div>
-    </div>
-  );
-};
-
-// Main Component
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -122,22 +20,6 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Data for value cards
-  const valueCards = [
-    {
-      title: "Excellence",
-      description: "Delivering superior legal services with unmatched expertise"
-    },
-    {
-      title: "Integrity",
-      description: "Building trust through ethical practice and transparency"
-    },
-    {
-      title: "Innovation",
-      description: "Pioneering modern approaches to legal challenges"
-    }
-  ];
-
   return (
     <>
       <section
@@ -146,19 +28,16 @@ const Hero = () => {
       >
         <BackgroundAnimation />
 
-        <motion.main
-          // style={{ y }}
-          className="relative z-10 flex items-center justify-center min-h-screen px-3 sm:px-4 lg:px-8"
-        >
+        <motion.main className="relative z-10 flex items-center justify-center min-h-screen px-3 sm:px-4 lg:px-8">
           <motion.div
-            variants={containerVariants}
+            variants={HERO_ANIMATION_VARIANTS.container}
             initial="hidden"
             animate="visible"
             className="text-center max-w-6xl mx-auto"
           >
             {/* Subheading */}
             <motion.p
-              variants={subheadingVariants}
+              variants={HERO_ANIMATION_VARIANTS.subheading}
               className="text-[#b98e44] text-xs sm:text-sm md:text-base mb-4 sm:mb-6 tracking-wider uppercase font-medium"
             >
               Leading Legal Excellence in Nigeria
@@ -166,7 +45,7 @@ const Hero = () => {
 
             {/* Main Heading */}
             <motion.h1
-              variants={headingVariants}
+              variants={HERO_ANIMATION_VARIANTS.heading}
               className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white px-2"
             >
               <motion.span
@@ -189,7 +68,7 @@ const Hero = () => {
 
             {/* Mission Statement */}
             <motion.div
-              variants={missionVariants}
+              variants={HERO_ANIMATION_VARIANTS.mission}
               className="mb-6 sm:mb-8 max-w-4xl mx-auto px-2"
             >
               <motion.p
@@ -234,7 +113,7 @@ const Hero = () => {
 
             {/* Key Values */}
             <motion.section
-              variants={cardsContainerVariants}
+              variants={HERO_ANIMATION_VARIANTS.cardContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -261,7 +140,7 @@ const Hero = () => {
               <CTAButton
                 href="/about"
                 variant="secondary"
-                ariaLabel={`Learn more about ${COMPANY_NAME}`}
+                ariaLabel="Learn more"
                 delay={1.3}
               >
                 <span className="hidden sm:inline">Learn More About Us</span>
@@ -270,28 +149,6 @@ const Hero = () => {
             </motion.div>
           </motion.div>
         </motion.main>
-
-        {/* CSS for continuous scrolling animation */}
-        {/* <style jsx>{`
-          @keyframes scroll-infinite {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-
-          .animate-scroll-infinite {
-            animation: scroll-infinite 15s linear infinite;
-          }
-
-          @media (max-width: 768px) {
-            .animate-scroll-infinite {
-              animation: scroll-infinite 20s linear infinite;
-            }
-          }
-        `}</style> */}
       </section>
     </>
   );

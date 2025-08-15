@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { BsArrowUp, BsInstagram } from "react-icons/bs";
-import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
+import { FaXTwitter } from "react-icons/fa6";
+import { BsArrowUp, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -109,6 +109,20 @@ const Footer = () => {
                       className="hover:text-[#b98e44] transition-colors"
                     >
                       08050590365
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-[#b98e44] font-medium mb-2">Email</h4>
+                <div className="text-gray-300 text-sm">
+                  <p>
+                    <a
+                      href="mailto:info@anaandassociates.com"
+                      className="hover:text-[#b98e44] transition-colors"
+                    >
+                      info@anaandassociates.com
                     </a>
                   </p>
                 </div>

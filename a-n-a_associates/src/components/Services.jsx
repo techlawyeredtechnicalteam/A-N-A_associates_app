@@ -1,148 +1,25 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaHandshake } from "react-icons/fa";
-import { MdOutlineGavel } from "react-icons/md";
-import {
-  RiScales3Line,
-  RiBuildingLine,
-  RiHomeLine,
-  RiParentLine,
-  RiTeamLine,
-  RiFileList3Line
-} from "react-icons/ri";
+import { motion } from "framer-motion";
+import { services } from "@/constants/Services";
+import { SERVICES_ANIMATION_VARIANTS } from "./Animation/ServicesAnimation";
 
 const Services = () => {
-  const services = [
-    {
-      title: "Insolvency and Debt Recovery",
-      description:
-        "Comprehensive insolvency and debt recovery services with accredited practitioners. We help creditors, debtors, and financial institutions navigate financial distress, liquidation, and debt enforcement processes.",
-      icon: <RiScales3Line className="w-8 h-8 text-black" />
-    },
-    {
-      title: "Corporate and Commercial Practice",
-      description:
-        "Strategic legal advice for businesses at every stage. From company formation to governance, regulatory compliance, and commercial transactions tailored to your business objectives.",
-      icon: <RiBuildingLine className="w-8 h-8 text-black" />
-    },
-    {
-      title: "Arbitration and Alternative Dispute Resolution",
-      description:
-        "Efficient, cost-effective dispute resolution services. We represent clients in domestic and international arbitration, mediation, and conciliation processes.",
-      icon: <FaHandshake className="w-8 h-8 text-black" />
-    },
-    {
-      title: "Civil Litigation",
-      description:
-        "Strategic litigation services across all levels of Nigerian courts. We provide skilled advocacy and diligent representation with a focus on achieving favorable outcomes efficiently.",
-      icon: <MdOutlineGavel className="w-8 h-8 text-black" />
-    },
-    {
-      title: "Property Management and Real Estate Law",
-      description:
-        "Comprehensive real estate legal services covering property acquisition, title perfection, development advisory, and property management including tenant relations.",
-      icon: <RiHomeLine className="w-8 h-8 text-black" />
-    },
-    {
-      title: "Probate and Administration of Estate Law",
-      description:
-        "Expert legal support in estate administration and probate processes. We guide families through asset distribution, will execution, and estate planning with compassion and efficiency.",
-      icon: <RiFileList3Line className="w-8 h-8 text-black" />
-    },
-    {
-      title: "Family Law",
-      description:
-        "Sensitive and practical family law services protecting individual and family rights. We handle family-related matters with confidentiality and compassion while ensuring fair resolutions.",
-      icon: <RiParentLine className="w-8 h-8 text-black" />
-    },
-    {
-      title: "Employment and Labour Law",
-      description:
-        "Comprehensive employment law services for employers and employees. We help create compliant workplace structures, manage relationships, and resolve employment disputes effectively.",
-      icon: <RiTeamLine className="w-8 h-8 text-black" />
-    }
-  ];
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 60,
-      scale: 0.9
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-        duration: 0.8
-      }
-    }
-  };
-
-  const headerVariants = {
-    hidden: {
-      opacity: 0,
-      y: -50
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        duration: 1
-      }
-    }
-  };
-
-  const ctaVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        damping: 15,
-        delay: 0.8
-      }
-    }
-  };
-
   return (
     <motion.div
       className="bg-gray-50 text-gray-900 relative overflow-hidden py-20"
       initial="hidden"
       animate="visible"
-      variants={containerVariants}
+      variants={SERVICES_ANIMATION_VARIANTS.container}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div className="text-center mb-16" variants={headerVariants}>
+        <motion.div
+          className="text-center mb-16"
+          variants={SERVICES_ANIMATION_VARIANTS.header}
+        >
           <motion.p
             className="text-[#b98e44] text-sm md:text-base mb-4 tracking-wider uppercase font-medium"
             initial={{ opacity: 0, y: -20 }}
@@ -178,13 +55,13 @@ const Services = () => {
         {/* Services Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={containerVariants}
+          variants={SERVICES_ANIMATION_VARIANTS.container}
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
-              variants={itemVariants}
+              variants={SERVICES_ANIMATION_VARIANTS.item}
               whileHover={{
                 scale: 1.05,
                 transition: { type: "spring", stiffness: 100, damping: 10 }
@@ -221,7 +98,10 @@ const Services = () => {
         </motion.div>
 
         {/* Bottom CTA Section */}
-        <motion.div className="text-center mt-16" variants={ctaVariants}>
+        <motion.div
+          className="text-center mt-16"
+          variants={SERVICES_ANIMATION_VARIANTS.cta}
+        >
           <motion.div
             className="bg-[#152833] rounded-3xl p-8 md:p-12"
             whileHover={{
