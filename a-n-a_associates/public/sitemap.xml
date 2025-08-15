@@ -6,25 +6,28 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://anaandassociates.com/</loc>
-  <lastmod>2025-08-15T10:55:25+00:00</lastmod>
+  <loc>https://anaandassociates.com/</loc>
+  <lastmod>2024-12-19T12:00:00+00:00</lastmod>
   <priority>1.00</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://anaandassociates.com/about</loc>
-  <lastmod>2025-08-15T10:55:25+00:00</lastmod>
+  <loc>https://anaandassociates.com/about</loc>
+  <lastmod>2024-12-19T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://anaandassociates.com/services</loc>
-  <lastmod>2025-08-15T10:55:25+00:00</lastmod>
+  <loc>https://anaandassociates.com/services</loc>
+  <lastmod>2024-12-19T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://anaandassociates.com/contact</loc>
-  <lastmod>2025-08-15T10:55:25+00:00</lastmod>
+  <loc>https://anaandassociates.com/contact</loc>
+  <lastmod>2024-12-19T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
-
 
 </urlset>
