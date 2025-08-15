@@ -1,261 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { IoCheckmark } from "react-icons/io5";
-import { FaBullseye } from "react-icons/fa";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Head from "next/head";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { PageHead } from "@/components/SEO/PageHead";
+import { ABOUT_ANIMATION_VARIANTS } from "@/components/Animation/AboutAnimation";
+import { WhyChooseUsSection } from "@/components/Reuseables/WhyChooseUsSection";
+import { MissionVisionSection } from "@/components/Reuseables/MissionVisionSection";
 
 const About = () => {
-  const whyChooseUs = [
-    {
-      title: "Experienced Legal Team",
-      description:
-        "Over a decade of active legal practice with proven expertise"
-    },
-    {
-      title: "Client-Centered Approach",
-      description: "Your needs and success are our top priority"
-    },
-    {
-      title: "Prompt Response Time",
-      description: "Quick and efficient service delivery when you need it most"
-    },
-    {
-      title: "Proven Track Record",
-      description: "Consistent success and recognition in the legal community"
-    },
-    {
-      title: "Transparent Billing",
-      description: "Clear, honest pricing with no hidden costs"
-    }
-  ];
-
-  // JSON-LD structured data for SEO
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    name: "A.N.A & Associates",
-    alternateName: "ANA Associates",
-    description:
-      "A modern and full-service law firm based in Lagos, Nigeria, committed to providing exceptional legal solutions with integrity and excellence.",
-    url: "https://anaassociates.vercel.app/about",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress:
-        "1st Floor, Scapular Plaza, Igbo Efon Bus-stop, Lekki Epe Expressway",
-      addressLocality: "Lekki",
-      addressRegion: "Lagos",
-      addressCountry: "Nigeria",
-      postalCode: "101245"
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "6.4474",
-      longitude: "3.5706"
-    },
-    openingHours: ["Mo-Fr 09:00-18:00", "Sa 09:00-13:00"],
-    founder: {
-      "@type": "Person",
-      name: "Adekunle Aribisala",
-      jobTitle: "Managing Partner",
-      description:
-        "Seasoned legal practitioner with over a decade of experience in diverse areas of law",
-      alumniOf: [
-        {
-          "@type": "EducationalOrganization",
-          name: "University of Ibadan",
-          description: "Bachelor of Laws (LL.B) - 2011"
-        },
-        {
-          "@type": "EducationalOrganization",
-          name: "University of Lagos",
-          description: "Master of Laws (LL.M) - 2018"
-        }
-      ],
-      memberOf: [
-        {
-          "@type": "Organization",
-          name: "Nigerian Bar Association",
-          abbreviation: "NBA"
-        },
-        {
-          "@type": "Organization",
-          name: "Business Recovery and Insolvency Practitioners Association of Nigeria",
-          abbreviation: "BRIPAN"
-        }
-      ],
-      hasCredential: [
-        {
-          "@type": "EducationalOccupationalCredential",
-          name: "Notary Public of Nigeria"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          name: "Called to Nigerian Bar - 2012"
-        }
-      ]
-    },
-    serviceArea: {
-      "@type": "Country",
-      name: "Nigeria"
-    },
-    areaServed: ["Lagos, Nigeria", "Nigeria"],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Legal Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Corporate and Commercial Law",
-            description:
-              "Strategic legal advice for businesses including company formation, governance, and regulatory compliance"
-          }
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Civil Litigation",
-            description:
-              "Strategic litigation services across all levels of Nigerian courts"
-          }
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Property and Real Estate Law",
-            description:
-              "Comprehensive real estate legal services covering property acquisition and title perfection"
-          }
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Insolvency and Debt Recovery",
-            description:
-              "Comprehensive insolvency and debt recovery services with accredited practitioners"
-          }
-        }
-      ]
-    },
-    serviceArea: {
-      "@type": "Country",
-      name: "Nigeria"
-    },
-    areaServed: "Lagos, Nigeria"
-  };
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const fadeInVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <>
-      <Head>
-        <title>
-          A.N.A & Associates - Leading Law Firm in Lagos, Nigeria | Adekunle
-          Aribisala
-        </title>
-        <meta
-          name="title"
-          content="About A.N.A & Associates - Leading Law Firm in Lagos, Nigeria | Adekunle Aribisala"
-        />
-        <meta
-          name="description"
-          content="Learn about A.N.A & Associates, a full-service law firm in Lagos, Nigeria. Led by Managing Partner Adekunle Aribisala with over a decade of legal expertise in corporate law, civil litigation, property law, and insolvency."
-        />
-        <meta
-          name="keywords"
-          content="A.N.A Associates, ANA Associates, Lagos law firm, Nigerian lawyers, Adekunle Aribisala, corporate law Nigeria, civil litigation Lagos, property law Nigeria, insolvency law, legal services Lagos, Nigerian Bar Association, BRIPAN, Notary Public Nigeria, University of Ibadan, University of Lagos, Lekki law firm, legal practitioners Nigeria"
-        />
-        <meta name="author" content="A.N.A & Associates" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://anaassociates.vercel.app/about" />
-
-        {/* JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData)
-          }}
-        />
-        {/* Breadcrumb Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://ana-associates.com"
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "About",
-                  item: "https://ana-associates.com/about"
-                }
-              ]
-            })
-          }}
-        />
-      </Head>
-
+      <PageHead />
       <motion.div
         className="bg-gray-50"
         initial="hidden"
         animate="visible"
-        variants={containerVariants}
+        variants={ABOUT_ANIMATION_VARIANTS.container}
       >
         <Header />
         <main className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <motion.header
             className="text-center mb-12 sm:mb-16"
-            variants={fadeInVariants}
+            variants={ABOUT_ANIMATION_VARIANTS.fadeIn}
           >
             <motion.h1
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6"
@@ -278,7 +48,7 @@ const About = () => {
           <motion.section
             className="bg-white rounded-2xl shadow-xl overflow-hidden mb-12 sm:mb-16"
             aria-labelledby="Managing-partner"
-            variants={itemVariants}
+            variants={ABOUT_ANIMATION_VARIANTS.item}
             transition={{ duration: 0.2 }}
           >
             <div className="lg:flex">
@@ -286,16 +56,13 @@ const About = () => {
               <div className="lg:w-1/3 bg-[#b98e44] p-6 sm:p-8 lg:p-12 flex items-center justify-center">
                 <div className="text-center">
                   <motion.div
-                    className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg"
+                    className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg rounded-full overflow-hidden"
                     transition={{ duration: 0.2 }}
                   >
-                    {/* White background matches image size */}
-                    <div className="absolute inset-0 bg-white rounded-full" />
                     <Image
                       src="/profile.jpg"
                       alt="A.N.A & Associates Managing Partner - Adekunle Aribisala"
-                      className="rounded-full object-covery
-                       w-full h-full relative"
+                      className="rounded-full object-cover object-top w-full h-full"
                       width={192}
                       height={192}
                       loading="eager"
@@ -399,125 +166,10 @@ const About = () => {
           </motion.section>
 
           {/* Mission & Vision */}
-          <motion.section
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16"
-            aria-labelledby="mission-vision"
-            variants={containerVariants}
-          >
-            <motion.div
-              className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-lg border border-gray-100"
-              variants={itemVariants}
-              whileHover={{
-                boxShadow:
-                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-              }}
-            >
-              <div className="flex items-center mb-4 sm:mb-6">
-                <motion.div
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-[#b98e44] rounded-lg flex items-center justify-center mr-3 sm:mr-4"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <IoMdCheckmarkCircleOutline className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </motion.div>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
-                  Our Mission
-                </h2>
-              </div>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
-                To provide strategic, innovative, and cost-effective legal
-                solutions that help our clients succeed in Nigeria's evolving
-                business landscape.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-lg border border-gray-100"
-              variants={itemVariants}
-              whileHover={{
-                boxShadow:
-                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-              }}
-            >
-              <div className="flex items-center mb-4 sm:mb-6">
-                <motion.div
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-[#b98e44] rounded-lg flex items-center justify-center mr-3 sm:mr-4"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <FaBullseye className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </motion.div>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
-                  Our Vision
-                </h2>
-              </div>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
-                To be a leading law firm in Nigeria, recognized for excellence,
-                integrity, and client satisfaction across all legal practice
-                areas.
-              </p>
-            </motion.div>
-          </motion.section>
+          <MissionVisionSection />
 
           {/* Why Choose Us */}
-          <motion.section
-            className="bg-[#b98e44] rounded-2xl p-6 sm:p-8 lg:p-12 xl:p-16 text-center shadow-xl"
-            aria-labelledby="why-choose-us"
-            variants={itemVariants}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <motion.h2
-              id="why-choose-us"
-              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              Why Choose A.N.A & Associates?
-            </motion.h2>
-            <motion.p
-              className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-800 mb-8 sm:mb-10 lg:mb-12 max-w-4xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              We combine local knowledge with global best practices, offering
-              comprehensive legal support in navigating Nigeria's complex legal
-              landscape with integrity and professionalism.
-            </motion.p>
-
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-              variants={containerVariants}
-            >
-              {whyChooseUs.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/30"
-                  variants={itemVariants}
-                  whileHover={{
-                    backgroundColor: "rgba(255, 255, 255, 0.3)"
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <motion.div
-                    className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <IoCheckmark className="w-5 h-5 sm:w-6 sm:h-6 text-[#b98e44]" />
-                  </motion.div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-700">
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.section>
+          <WhyChooseUsSection />
         </main>
         <Footer />
       </motion.div>
