@@ -114,12 +114,7 @@ export const legalServiceSchema = {
     // Add your social media links here when you have them
     "https://www.instagram.com/anaandassociates?igsh=MWluM3o0d2h4ZzMyag",
     "https://x.com/ana_associates?t=STjJ1xo29bkhok3agnu07A&s=09"
-  ],
-  serviceArea: {
-    "@type": "Country",
-    name: "Nigeria"
-  },
-  areaServed: "Lagos, Nigeria"
+  ]
 };
 
 export const breadcrumbSchema = {
